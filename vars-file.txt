@@ -1,0 +1,3 @@
+VAR1=varvarvar1
+VAR2=varvarvar2
+VAR3=varvarvar3
