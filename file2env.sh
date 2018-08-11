@@ -1,5 +1,5 @@
 #!/bin/bash
-set +x
+set -x
 ###################################
 ## Read lines from properties file 
 #  and export them into env vars
@@ -13,13 +13,13 @@ VARSFILE=${PWD}/vars-file.txt
 export_lines() {
     #echo ==$1
     while IFS='' read -r line || [[ -n "$line" ]]; do
-        [ ! -z $(echo "$line"|grep -Ev '^#' 2>/dev/null) ] && export "$line"
+        [ ! -z "$(echo "$line"|grep -Ev '^#' 2>/dev/null)" ] && export $line
     done < "$1"
 }
 
 ## Main 
 if ( [ ! -f "$VARSFILE" ] && [ ! -f "$1" ] ) ; then
-    sed -ni '/#~~/,/#~/p' $0
+     cat $0 | sed -n '/#~~/,/#~/p'
   else
      [ -s "$VARSFILE" ] && export_lines "$VARSFILE"
      [ -s "$1" ] && export_lines "$1"
