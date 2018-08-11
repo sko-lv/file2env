@@ -9,6 +9,6 @@ Exports ENV variables from vars-file.txt (default) or command line (overrides de
 VAR1=varstring1  
 VAR2=varstring2  
 #Next line is to *unset* VAR  
--n VAR3=
+-n VAR3=  
 .....  
 
