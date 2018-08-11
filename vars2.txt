@@ -1,3 +1,5 @@
 VAR3=var2var3
 #VAR4=var2var4
 -n VAR5=var2var5
+VAR6=var2var6
+
