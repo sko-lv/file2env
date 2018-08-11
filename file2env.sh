@@ -1,12 +1,12 @@
 #!/bin/bash
-set -x
+set +x
 ###################################
 ## Read lines from properties file 
 #  and export them into env vars
 #
-#~~ 
+#~  ~ 
 #  Usage: $0 [./vars-file.txt]
-#~
+#~ ~~
 
 VARSFILE=${PWD}/vars-file.txt
 
@@ -19,7 +19,7 @@ export_lines() {
 
 ## Main 
 if ( [ ! -f "$VARSFILE" ] && [ ! -f "$1" ] ) ; then
-     cat $0 | sed -n '/#~~/,/#~/p'
+     cat $0 | sed -n '/^#~  ~/,/^#~ ~~/p;/^#~  ~~/q'
   else
      [ -s "$VARSFILE" ] && export_lines "$VARSFILE"
      [ -s "$1" ] && export_lines "$1"
