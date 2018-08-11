@@ -5,7 +5,8 @@ Exports ENV variables from vars-file.txt (default)
   
 ### vars-file.txt format:  
 ...  
- VAR=varsring  
+ VAR1=varstring1  
+ VAR2=varstring2  
 ...  
 
 
